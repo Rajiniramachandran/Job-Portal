@@ -1,0 +1,281 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">   
+     
+</head>
+<body>
+    
+<!-- Header Section Start -->
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand" href="/index/"><i class="fas fa-briefcase mr-2"></i>Jobhunt.</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/index/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/index/about">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/index/jobs">All Jobs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/index/contact">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/index/register">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/index/login">Login</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Account
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/index/login">Login</a>
+                    <a class="dropdown-item" href="/index/register">Register</a>
+                </div>
+            </li> -->
+        </ul>
+    </div>
+</nav>
+<!-- Header Section End -->
+
+<!-- Home Section Start -->
+<div class="home-container d-flex align-items-center justify-content-center" style="position: relative;">
+    <section class="home text-center p-5 bg-white rounded shadow" style="position: relative; z-index: 1;">
+        <form action="" method="post">
+            <h3 class="mb-4">Find Your Next Job</h3>
+            <div class="form-group">
+                <label for="title">Job Title<span class="text-danger"></span></label>
+                <input type="text" id="title" name="title" placeholder="Keyword, Category or Company" required maxlength="20" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="location">Job Location</label>
+                <input type="text" id="location" name="location" placeholder="City, State or Country" required maxlength="50" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Search</button>
+        </form>
+    </section>
+</div>
+<!-- Home Section End -->
+
+<!-- Category Section Start -->
+<section class="category">
+    <h1 class="heading">Job Categories</h1>
+    <div class="box-container">
+        <a href="#" class="box">
+            <i class="fas fa-code"></i>
+            <div>
+                <h3>Development</h3>
+                <span>1100 jobs</span>
+            </div>
+        </a>
+        <a href="#" class="box">
+            <i class="fas fa-paint-brush"></i>
+            <div>
+                <h3>Labour</h3>
+                <span>3200 jobs</span>
+            </div>
+        </a>
+        <a href="#" class="box">
+            <i class="fas fa-bullhorn"></i>
+            <div>
+                <h3>Finance</h3>
+                <span>2500 jobs</span>
+            </div>
+        </a>
+        <a href="#" class="box">
+            <i class="fas fa-wrench"></i>
+            <div>
+                <h3>Macanic Trainee</h3>
+                <span>1800 jobs</span>
+            </div>
+         </a>
+        <a href="#" class="box">
+            <i class="fas fa-headset"></i>
+            <div>
+                <h3>Tele Calling</h3>
+                <span>2700jobs</span>
+            </div>
+        </a>
+        <a href="#" class="box">
+            <i class="fas fa-bullhorn"></i>
+            <div>
+                <h3>Marketing</h3>
+                <span>1700 jobs</span>
+            </div>
+        </a>
+        <a href="#" class="box">
+            <i class="fas fa-user"></i>
+            <div>
+                <h3>Sales Executive</h3>
+                <span>1500 jobs</span>
+            </div>
+        </a>
+        <a href="#" class="box">
+            <i class="fas fa-paint-brush"></i>
+            <div>
+                <h3>Painter</h3>
+                <span>1200 jobs</span>
+            </div>
+        </a> 
+    </div>
+</section>
+<!-- Category Section End -->
+
+<!-- job section start -->
+<section class="job-container">
+
+    <h1 class="heading">latest jobs</h1>
+
+    <div class="box-container">
+
+        <div class="box">
+             <div class="company">
+                <img src="{% static 'images/icon-1.jpeg' %}" alt="">
+                 <div>
+                    <h3>IT infosys co.</h3>
+                    <span>2 days ago</span>
+                 </div>
+
+             </div>
+             <h3 class="job-title">senior web developer</h3>
+             <p class="location"><i class="fas fa-map-marker-alt"></i>
+            <span>Chennai,TN</span></p>
+            <div class="tags">
+                <p><i class="fas fa-indian-rupee-sign"></i><span>10k-25k</span></p>
+                <p><i class="fas fa-briefcase"></i><span>part-time</span></p>
+                <p><i class="fas fa-clock"></i><span>day shifts</span></p>
+
+            </div>
+            
+        </div>
+        
+         
+
+        <div class="box">
+            <div class="company">
+               <img src="{% static 'images/icon-2.jpeg' %}" alt="">
+                <div>
+                   <h3>all media ltd</h3>
+                   <span>2 days ago</span>
+                </div>
+
+            </div>
+            <h3 class="job-title">qualified developer</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i>
+           <span>Banglore,Karnataka</span></p>
+           <div class="tags">
+               <p><i class="fas fa-indian-rupee-sign"></i><span>15k-25k</span></p>
+               <p><i class="fas fa-briefcase"></i><span>full-time</span></p>
+               <p><i class="fas fa-clock"></i><span>felxible shifts</span></p>
+
+           </div>
+           
+       </div>
+       
+
+       <div class="box">
+        <div class="company">
+           <img src="{% static 'images/icon-3.jpeg' %}" alt="">
+            <div>
+               <h3>software solutions</h3>
+               <span>posted today</span>
+            </div>
+
+        </div>
+        <h3 class="job-title">javascript developer</h3>
+        <p class="location"><i class="fas fa-map-marker-alt"></i>
+       <span>Coimbatore,TN</span></p>
+       <div class="tags">
+           <p><i class="fas fa-indian-rupee-sign"></i><span>20k</span></p>
+           <p><i class="fas fa-briefcase"></i><span>intership</span></p>
+           <p><i class="fas fa-clock"></i><span>night shifts</span></p>
+
+       </div>
+       
+   </div>
+
+
+    </div>
+
+
+</section>
+
+ <!-- job section end -->
+
+
+<!-- Footer Section Start -->
+<footer class="footer bg-light py-5">
+    <section class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <a href="/index/" class="d-block">Home</a>
+                <a href="/index/about" class="d-block">About</a>
+                <a href="/index/jobs" class="d-block">All Jobs</a>
+                <a href="/index/contact" class="d-block">Contact Us</a>
+                <a href="/index/filter_search" class="d-block">Filter Search</a>
+            </div>
+            <div class="col-md-4">
+                <h5>Extra Links</h5>
+                <a href="/index/account" class="d-block">Account</a>
+                <a href="/index/login" class="d-block">Login</a>
+                <a href="/index/register" class="d-block">Register</a>
+                <a href="/index/post_job" class="d-block">Post Job</a>
+                <a href="/index/dashboard" class="d-block">Dashboard</a>
+            </div>
+            <div class="col-md-4">
+                <h5>Follow Us</h5>
+                <a href="#" class="d-block"><i class="fab fa-facebook-f mr-2"></i>Facebook</a>
+                <a href="#" class="d-block"><i class="fab fa-twitter mr-2"></i>Twitter</a>
+                <a href="#" class="d-block"><i class="fab fa-instagram mr-2"></i>Instagram</a>
+                <a href="#" class="d-block"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
+                <a href="#" class="d-block"><i class="fab fa-youtube mr-2"></i>YouTube</a>
+            </div>
+        </div>
+    </section>
+    <div class="text-center mt-4">
+        &copy; 2024 Jobhunt. Designed by <span>Mr. Rajini Developer</span>. All rights reserved!
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+<!-- Bootstrap and jQuery Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Custom JS for Interactive Features -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var toggler = document.querySelector('.navbar-toggler');
+        var navbarNav = document.querySelector('#navbarNav');
+
+        toggler.addEventListener('click', function () {
+            navbarNav.classList.toggle('collapse');
+        });
+    });
+</script>
+
+</body>
+</html>

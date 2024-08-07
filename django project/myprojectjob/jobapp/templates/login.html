@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+        /* Basic reset */
+        body, h1, p, form, input, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #0056b3;
+        }
+
+        .login-container p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .login-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .login-form input:focus {
+            border-color: #0056b3;
+            box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+        }
+
+        .login-form .password-wrapper {
+            position: relative;
+        }
+
+        .login-form .password-wrapper input {
+            padding-right: 45px;
+        }
+
+        .login-form .password-wrapper .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #555;
+        }
+
+        .login-form button {
+            background: #0056b3;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .login-form button:hover {
+            background: #004494;
+        }
+
+        .login-form a {
+            color: #0056b3;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .login-form a:hover {
+            text-decoration: underline;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .navigation-buttons button {
+            width: 48%;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .navigation-buttons button:hover {
+            background: #e2e6ea;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <p>Welcome back! Please login to your account.</p>
+        <form action="{% url 'login' %}" method="post" class="login-form">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="form-group">
+                <label for="username">Username:</label>
+                {{ form.username }}
+                {{ form.username.errors }}
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <div class="password-wrapper">
+                    {{ form.password }}
+                    {{ form.password.errors }}
+                    <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <div class="form-group">
+                <a href="javascript:history.back()" class="btn btn-secondary btn-block">Back</a>
+            </div>
+            <!-- <button type="submit">Login</button>
+            <button type="button" onclick="goBack()">Back</button> -->
+        </form>
+        <!-- <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+        <div class="navigation-buttons">
+            <button onclick="goBack()">Previous</button>
+            <button onclick="goNext()">Next</button>
+        </div>-->
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const togglePassword = document.querySelector('#togglePassword');
+            const password = document.querySelector('#id_password');
+
+            togglePassword.addEventListener('click', function () {
+                // Toggle the type attribute
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+                // Toggle the icon
+                this.classList.toggle('fa-eye-slash');
+            });
+
+            function goBack() {
+                window.history.back();
+            }
+
+            function goNext() {
+                window.history.forward();
+            }
+        });
+    </script>
+</body>
+</html>

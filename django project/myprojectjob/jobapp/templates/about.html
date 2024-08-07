@@ -1,0 +1,445 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        main {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        /* About Us Section */
+        .about-us {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .about-us h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #ff6f61;
+            font-weight: 700;
+        }
+
+        .about-us h2 {
+            font-size: 2rem;
+            color: #003366;
+            margin-top: 25px;
+            border-bottom: 3px solid #003366;
+            padding-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .about-us p {
+            line-height: 1.8;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .about-us ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-us ul li {
+            background: #e8f0fe;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-us ul li strong {
+            color: #ff6f61;
+        }
+
+        /* Links */
+        a {
+            color: #003366;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-us {
+                padding: 20px;
+            }
+
+            .about-us h1 {
+                font-size: 2.2rem;
+            }
+
+            .about-us h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* Button Styles */
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .button-container a {
+            display: inline-block;
+            margin: 5px;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            color: #fff;
+            background-color: #003366;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .button-container a:hover {
+            background-color: #002244;
+            transform: scale(1.05);
+        }
+
+        /* Team Section */
+        .team {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .team h2 {
+            color: #ff6f61;
+            font-size: 2rem;
+            border-bottom: 3px solid #ff6f61;
+            padding-bottom: 12px;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        .team-member h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #003366;
+        }
+
+        .team-member p {
+            margin-bottom: 0;
+            color: #555;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .testimonials h2 {
+            color: #003366;
+            font-size: 2rem;
+            border-bottom: 3px solid #003366;
+            padding-bottom: 12px;
+        }
+
+        .testimonial {
+            background: #f0f8ff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial p {
+            margin-bottom: 0;
+        }
+
+        .testimonial strong {
+            color: #ff6f61;
+        }
+
+        /* Partners Section */
+        .partners {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .partners h2 {
+            color: #ff6f61;
+            font-size: 2rem;
+            border-bottom: 3px solid #ff6f61;
+            padding-bottom: 12px;
+        }
+
+        .partner-logos img {
+            max-width: 100px;
+            margin: 10px;
+        }
+
+          /* Review Section Styles */
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.reviews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+}
+
+.box-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.box {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    padding: 2rem;
+    flex-basis: calc(33% - 2rem);
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+}
+
+.stars {
+    color: #f39c12;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 1.5rem;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+}
+
+.user h3 {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.user span {
+    font-size: 0.9rem;
+    color: #999;
+}
+   
+
+</style>
+</head>
+<body>
+    <!-- about section start -->
+    <main class="container my-5">
+        <section class="about-us">
+            <h1>About Us</h1>
+            
+            <h2>Welcome to Jobhunt</h2>
+            <p>Jobhunt is a cutting-edge job portal designed to simplify the job search process and connect job seekers with top employers. Our platform provides a seamless experience for finding and applying to job opportunities, posting jobs, and managing career profiles.</p>
+            
+            <h2>Our Mission</h2>
+            <p>Our mission is to transform the job market by providing a user-friendly platform that bridges the gap between job seekers and employers. We aim to make job searching more efficient, effective, and accessible for everyone.</p>
+            
+            <h2>Our Vision</h2>
+            <p>We envision a world where every individual has access to the best job opportunities and every employer finds the right talent with ease. Through innovation and dedication, we strive to lead the industry in job placement solutions.</p>
+            
+            <h2>Our Values</h2>
+            <ul>
+                <li><strong>Integrity:</strong> We uphold transparency and honesty in all our interactions.</li>
+                <li><strong>Innovation:</strong> We continuously enhance our platform to meet the evolving needs of our users.</li>
+                <li><strong>Customer Success:</strong> We are committed to ensuring that both job seekers and employers achieve their goals.</li>
+            </ul>
+            
+            <h2>Meet the Team</h2>
+            <div class="team">
+                <div class="team-member">
+                    <img src="{% static 'images/pic-1.avif' %}" alt="Team Member 1">
+                    <div>
+                        <h3>Rajini Ramachandran</h3>
+                        <p>CEO & Founder</p>
+                        <p>Jane is the visionary behind Jobhunt, with a passion for improving the job market through innovative technology.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="{% static 'images/pic-3.avif' %}" alt="Team Member 2">
+                    <div>
+                        <h3>Sridhar kumar</h3>
+                        <p>CTO</p>
+                        <p>John leads the tech team, ensuring that our platform runs smoothly and is at the forefront of job portal technology.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>User Testimonials</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p><strong>Emily Johnson:</strong> "Jobhunt has made my job search so much easier! The platform is user-friendly and the job alerts are very helpful."</p>
+                </div>
+                <div class="testimonial">
+                    <p><strong>Michael Brown:</strong> "Posting jobs on Jobhunt has been a breeze. The platform connects me with high-quality candidates quickly."</p>
+                </div>
+            </div>
+
+            
+            </div>
+            
+             <h2>Contact Us</h2>
+            <p>If you have any questions or need assistance, please don’t hesitate to <a href="contact">contact us</a>. We’re here to help!</p> 
+        </section>
+        <!-- about section end -->
+
+        <!-- review section start -->
+<div class="section-title">Top Reviews</div>
+
+<section class="reviews">
+    <div class="box-container">
+
+        <div class="box">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <h3>Amazing Job Portal</h3>
+            <p>This job portal provided me with numerous opportunities to find my dream job. The user-friendly interface and extensive job listings made my job search a breeze.</p>
+            <div class="user">
+                <img src="{% static 'images/pic-2.avif' %}" alt="">
+                <div>
+                    <h3>Chethrin schulze</h3>
+                    <span>Web Designer</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <h3>Easy to Use</h3>
+            <p>The platform is incredibly easy to use, with a clean and intuitive design. I was able to navigate through job postings and apply effortlessly.</p>
+            <div class="user">
+                <img src="{% static 'images/pic-4.avif' %}" alt="">
+                <div>
+                    <h3>Rose Smith</h3>
+                    <span>Graphic Designer</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <h3>Got Selected!</h3>
+            <p>Thanks to this job portal, I got selected for a role that perfectly matches my skills and experience. The application process was smooth and efficient.</p>
+            <div class="user">
+                <img src="{% static 'images/pic-6.avif' %}" alt="">
+                <div>
+                    <h3>Jasmine Brown</h3>
+                    <span>Software Engineer</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    
+
+         <!-- review section end -->
+
+
+
+        <!-- Button Container -->
+        <div class="button-container">
+            <a href="javascript:history.back()" class="btn btn-secondary">Back to Home</a>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

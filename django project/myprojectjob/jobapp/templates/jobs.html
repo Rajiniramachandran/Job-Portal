@@ -1,0 +1,264 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore job opportunities across various industries. Click on the job titles to view more details and apply for positions that interest you.">
+    <title>All Jobs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body, h1, h2, h3, h4, p {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background: #f4f4f9;
+            line-height: 1.6;
+        }
+        .all-jobs {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+        .all-jobs h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #222;
+        }
+        .all-jobs h2 {
+            font-size: 2rem;
+            color: #17a2b8;
+            margin-top: 20px;
+            border-bottom: 3px solid #17a2b8;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        .job-category {
+            margin-bottom: 30px;
+        }
+        .job-category h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #17a2b8;
+            text-transform: uppercase;
+            border-bottom: 2px solid #17a2b8;
+            padding-bottom: 10px;
+        }
+        .job-listing {
+            background: #e9f7f7;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+        .job-listing:hover {
+            background: #d1f2f2;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        .job-listing h4 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #17a2b8;
+        }
+        .job-listing p {
+            margin-bottom: 10px;
+        }
+        .job-listing a {
+            color: #17a2b8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .job-listing a:hover {
+            text-decoration: underline;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-container a {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #17a2b8;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .button-container a:hover {
+            background-color: #117a8b;
+        }
+        @media (max-width: 768px) {
+            .all-jobs {
+                padding: 20px;
+            }
+            .all-jobs h1 {
+                font-size: 2.2rem;
+            }
+            .all-jobs h2 {
+                font-size: 1.8rem;
+            }
+            .job-category h3 {
+                font-size: 1.6rem;
+            }
+            .job-listing h4 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container my-5">
+        <section class="all-jobs">
+            <h1>All Jobs</h1>
+            <p>Explore job opportunities across various industries. Click on the job titles to view more details and apply for positions that interest you.</p>
+            
+            <!-- IT & Software -->
+            <div class="job-category">
+                <h3>IT & Software</h3>
+                <div class="job-listing">
+                    <h4><a href="#">Software Engineer</a></h4>
+                    <p><strong>Company:</strong> Tech Solutions</p>
+                    <p><strong>Location:</strong> TN, Chennai</p>
+                    <p><strong>Job Role:</strong> Develop and maintain software applications.</p>
+                    <p><strong>Qualification:</strong> B.Tech in Computer Science or related field</p>
+                    <p><strong>Salary:</strong> ₹8,00,000 - ₹12,00,000 per annum</p>
+                    <p><strong>Experience:</strong> 3+ years</p>
+                    <p><strong>Summary:</strong> Develop and maintain software applications. <a href="#">View Details</a></p>
+                </div>
+                <div class="job-listing">
+                    <h4><a href="#">Web Developer</a></h4>
+                    <p><strong>Company:</strong> Creative Agency</p>
+                    <p><strong>Location:</strong> Karnataka, Bangalore</p>
+                    <p><strong>Job Role:</strong> Build and design websites for various clients.</p>
+                    <p><strong>Qualification:</strong> B.Tech in Information Technology or related field</p>
+                    <p><strong>Salary:</strong> ₹6,00,000 - ₹9,00,000 per annum</p>
+                    <p><strong>Experience:</strong> 2+ years</p>
+                    <p><strong>Summary:</strong> Build and design websites for various clients. <a href="#">View Details</a></p>
+                </div>
+            </div>
+
+            <!-- Healthcare -->
+            <div class="job-category">
+                <h3>Healthcare</h3>
+                <div class="job-listing">
+                    <h4><a href="#">Registered Nurse</a></h4>
+                    <p><strong>Company:</strong> Health Center</p>
+                    <p><strong>Location:</strong> TN, Coimbatore</p>
+                    <p><strong>Job Role:</strong> Provide patient care and support.</p>
+                    <p><strong>Qualification:</strong> B.Sc Nursing</p>
+                    <p><strong>Salary:</strong> ₹4,00,000 - ₹6,00,000 per annum</p>
+                    <p><strong>Experience:</strong> 1+ years</p>
+                    <p><strong>Summary:</strong> Provide patient care and support. <a href="#">View Details</a></p>
+                </div>
+                <div class="job-listing">
+                    <h4><a href="#">Medical Technician</a></h4>
+                    <p><strong>Company:</strong> Hospital Network</p>
+                    <p><strong>Location:</strong> TN, Trichy</p>
+                    <p><strong>Job Role:</strong> Perform diagnostic tests and procedures.</p>
+                    <p><strong>Qualification:</strong> Diploma in Medical Lab Technology</p>
+                    <p><strong>Salary:</strong> ₹3,50,000 - ₹5,50,000 per annum</p>
+                    <p><strong>Experience:</strong> 1+ years</p>
+                    <p><strong>Summary:</strong> Perform diagnostic tests and procedures. <a href="#">View Details</a></p>
+                </div>
+            </div>
+
+            <!-- Finance -->
+            <div class="job-category">
+                <h3>Finance</h3>
+                <div class="job-listing">
+                    <h4><a href="#">Financial Analyst</a></h4>
+                    <p><strong>Company:</strong> Finance Corp</p>
+                    <p><strong>Location:</strong> TN, Chennai</p>
+                    <p><strong>Job Role:</strong> Analyze financial data and provide insights.</p>
+                    <p><strong>Qualification:</strong> MBA in Finance or related field</p>
+                    <p><strong>Salary:</strong> ₹7,00,000 - ₹10,00,000 per annum</p>
+                    <p><strong>Experience:</strong> 2+ years</p>
+                    <p><strong>Summary:</strong> Analyze financial data and provide insights. <a href="#">View Details</a></p>
+                </div>
+                <div class="job-listing">
+                    <h4><a href="#">Accountant</a></h4>
+                    <p><strong>Company:</strong> Accounting Services</p>
+                    <p><strong>Location:</strong> TN, Karur</p>
+                    <p><strong>Job Role:</strong> Manage financial records and statements.</p>
+                    <p><strong>Qualification:</strong> B.Com or related field</p>
+                    <p><strong>Salary:</strong> ₹5,00,000 - ₹7,00,000 per annum</p>
+                    <p><strong>Experience:</strong> 3+ years</p>
+                    <p><strong>Summary:</strong> Manage financial records and statements. <a href="#">View Details</a></p>
+                </div>
+            </div>
+
+            <!-- Marketing -->
+            <div class="job-category">
+                <h3>Marketing</h3>
+                <div class="job-listing">
+                    <h4><a href="#">Marketing Manager</a></h4>
+                    <p><strong>Company:</strong> Marketing Experts</p>
+                    <p><strong>Location:</strong> TN, Chennai</p>
+                    <p><strong>Job Role:</strong> Develop and implement marketing strategies.</p>
+                    <p><strong>Qualification:</strong> MBA in Marketing</p>
+                    <p><strong>Salary:</strong> ₹9,00,000 - ₹12,00,000 per annum</p>
+                    <p><strong>Experience:</strong> 4+ years</p>
+                    <p><strong>Summary:</strong> Develop and implement marketing strategies. <a href="#">View Details</a></p>
+                </div>
+                <div class="job-listing">
+                    <h4><a href="#">Content Strategist</a></h4>
+                    <p><strong>Company:</strong> Creative Agency</p>
+                    <p><strong>Location:</strong> TN, Coimbatore</p>
+                    <p><strong>Job Role:</strong> Plan and create content for various platforms.</p>
+                    <p><strong>Qualification:</strong> Bachelor's in Marketing or related field</p>
+                    <p><strong>Salary:</strong> ₹6,00,000 - ₹8,00,000 per annum</p>
+                    <p><strong>Experience:</strong> 2+ years</p>
+                    <p><strong>Summary:</strong> Plan and create content for various platforms. <a href="#">View Details</a></p>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="job-category">
+                <h3>Education</h3>
+                <div class="job-listing">
+                    <h4><a href="#">High School Teacher</a></h4>
+                    <p><strong>Company:</strong> Bright Future School</p>
+                    <p><strong>Location:</strong> TN, Chennai</p>
+                    <p><strong>Job Role:</strong> Teach high school subjects to students.</p>
+                    <p><strong>Qualification:</strong> B.Ed or Master's in relevant subject</p>
+                    <p><strong>Salary:</strong> ₹4,00,000 - ₹6,00,000 per annum</p>
+                    <p><strong>Experience:</strong> 2+ years</p>
+                    <p><strong>Summary:</strong> Teach high school subjects to students. <a href="#">View Details</a></p>
+                </div>
+                <div class="job-listing">
+                    <h4><a href="#">Assistant Professor</a></h4>
+                    <p><strong>Company:</strong> University College</p>
+                    <p><strong>Location:</strong> TN, Trichy</p>
+                    <p><strong>Job Role:</strong> Conduct lectures and research in a specific field.</p>
+                    <p><strong>Qualification:</strong> Ph.D. or Master's in relevant subject</p>
+                    <p><strong>Salary:</strong> ₹8,00,000 - ₹10,00,000 per annum</p>
+                    <p><strong>Experience:</strong> 3+ years</p>
+                    <p><strong>Summary:</strong> Conduct lectures and research in a specific field. <a href="#">View Details</a></p>
+                </div>
+            </div>
+                        
+        </section>
+         <!-- Button Container for Back Button -->
+         <div class="button-container">
+            <a href="javascript:history.back()" class="btn btn-secondary">Back to Home</a>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

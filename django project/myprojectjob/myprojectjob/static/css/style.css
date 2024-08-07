@@ -1,0 +1,302 @@
+
+        /* Custom CSS */
+
+/* General Styles */
+body {
+    background-color: #f4f7f6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background: #344955;
+    color: #ffffff;
+    border-bottom: 3px solid #f1c40f;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #ffffff !important;
+    font-size: 1.1rem;
+}
+
+.nav-link:hover {
+    color: #f1c40f !important;
+    text-decoration: underline;
+}
+
+/* Home Section Styles */
+.home-container {
+    background: linear-gradient(to right, #ff5f6d, #ffc371);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    padding: 0 20px;
+}
+
+.home {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+.home h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #344955;
+}
+
+.home .form-control {
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    font-size: 1rem;
+}
+
+.home .btn-primary {
+    background-color: #f1c40f;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+}
+
+.home .btn-primary:hover {
+    background-color: #f39c12;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Category Section Styles */
+.category {
+    background: #344955;
+    color: #ffffff;
+    padding: 50px 0;
+}
+
+.category .heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #f1c40f;
+}
+
+.category .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category .box {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 30px;
+    width: 220px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.category .box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.category .box i {
+    font-size: 2.5rem;
+    color: #344955;
+    margin-bottom: 15px;
+}
+
+.category .box h3 {
+    margin: 10px 0;
+    font-size: 1.3rem;
+}
+
+.category .box span {
+    color: #7f8c8d;
+}
+
+/* job section start */
+.job-container {
+    padding: 50px 0;
+    background-color: #f0f0f0;
+}
+
+.job-container .heading {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.box-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.box {
+    background: #ffeb3b; /* Changed background color to vibrant yellow */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 20px;
+    max-width: 300px;
+    transition: all 0.3s ease;
+    border-top: 10px solid #00c6ff; /* Top border color */
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.company {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.company img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #00c6ff; /* Image border color */
+}
+
+.company h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin: 0;
+}
+
+.company span {
+    color: #777;
+    font-size: 0.9em;
+}
+
+.job-title {
+    font-size: 1.5em;
+    color: #333;
+    margin: 10px 0;
+    text-transform: capitalize;
+}
+
+.location {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.location i {
+    color: #00c6ff; /* Icon color */
+    margin-right: 5px;
+}
+
+.tags {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.tags p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.tags i {
+    color: #00c6ff; /* Icon color */
+    margin-right: 5px;
+}
+
+/* job section end */
+
+
+
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient background for a colorful look */
+    color: #fff; /* White text for contrast */
+    padding: 4rem 2rem; /* Generous padding for a spacious feel */
+    border-top: 1px solid #ff6f61; /* Subtle border to complement the gradient */
+}
+
+.footer h5 {
+    color: #fff; /* White color for headings */
+    font-size: 1.5rem; /* Larger font size for better visibility */
+    margin-bottom: 1.5rem; /* Space below headings */
+    font-weight: 700; /* Bold headings */
+}
+
+.footer a {
+    color: #fff; /* White color for links */
+    text-decoration: none; /* Remove underline */
+    display: block; /* Block display for full width */
+    margin-bottom: 0.75rem; /* Space between links */
+    transition: color 0.3s, padding-left 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.footer a:hover {
+    color: #ffd700; /* Gold color on hover */
+    padding-left: 0.5rem; /* Slightly indent links on hover */
+    transform: scale(1.05); /* Slightly enlarge link on hover */
+}
+
+.footer .social-links {
+    margin-top: 1.5rem; /* Space above social links */
+}
+
+.footer .social-links a {
+    color: #fff; /* White color for social icons */
+    font-size: 2rem; /* Larger icon size */
+    margin-right: 1.5rem; /* Space between icons */
+    transition: color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.footer .social-links a:hover {
+    color: #ffd700; /* Gold color on hover */
+    transform: scale(1.1); /* Slightly enlarge icons on hover */
+}
+
+.footer .text-center {
+    color: #fff; /* White color for copyright text */
+    margin-top: 2rem; /* Space above copyright text */
+    font-size: 0.875rem; /* Slightly smaller font size */
+}
+
+.footer .container {
+    max-width: 1200px; /* Ensure container doesn't stretch too wide */
+    margin: 0 auto; /* Center container */
+}
+
+@media (max-width: 768px) {
+    .footer .row {
+        text-align: center; /* Center text on smaller screens */
+    }
+    
+    .footer .col-md-4 {
+        margin-bottom: 2rem; /* Space below each column */
+    }
+}
+
+    
+  

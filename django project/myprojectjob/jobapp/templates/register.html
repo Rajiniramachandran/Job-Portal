@@ -1,0 +1,223 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .register-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+            animation: fadeIn 0.5s;
+        }
+        .register-container h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #6c63ff;
+            text-align: center;
+        }
+        .register-container p {
+            margin-bottom: 20px;
+            color: #555;
+            text-align: center;
+        }
+        .register-form label {
+            font-weight: bold;
+            color: #555;
+        }
+        .register-form .form-control {
+            border-radius: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            transition: all 0.3s;
+        }
+        .register-form .form-control:focus {
+            border-color: #6c63ff;
+            box-shadow: 0 0 10px rgba(108, 99, 255, 0.3);
+        }
+        .register-form button {
+            background-color: #6c63ff;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .register-form button:hover {
+            background-color: #5848c2;
+        }
+        .register-form a {
+            color: #6c63ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .register-form a:hover {
+            color: #5848c2;
+        }
+        .input-group .input-group-append {
+            cursor: pointer;
+        }
+        .input-group-append .fas {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: #6c63ff;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .password-strength {
+            transition: color 0.3s;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            margin-top: 15px; /* Adjust this value as needed */
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h1>Register</h1>
+        <p>Create an account to get started.</p>
+        {% if messages %}
+            <div class="alert alert-success" role="alert">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        {% endif %}
+        <form method="post" class="register-form" onsubmit="return validateForm()">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="useremail">Email:</label>
+                <input type="email" id="useremail" name="useremail" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" class="form-control" required oninput="checkPasswordStrength()">
+                    <div class="input-group-append" onclick="togglePasswordVisibility('password')">
+                        <span class="input-group-text"><i id="toggle-password" class="fas fa-eye"></i></span>
+                    </div>
+                </div>
+                <!-- <div id="password-strength" class="password-strength">Strength: </div> -->
+            </div>
+
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password:</label>
+                <div class="input-group">
+                    <input type="password" id="confirm_password" name="confirm_password" class="form-control" required>
+                    <div class="input-group-append" onclick="togglePasswordVisibility('confirm_password')">
+                        <span class="input-group-text"><i id="toggle-confirm_password" class="fas fa-eye"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <div class="form-group">
+                <a href="javascript:history.back()" class="btn btn-secondary btn-block">Back</a>
+            </div>
+        </form>
+        <!-- <p class="text-center mt-3">Already have an account? <a href="login">Login here</a></p> -->
+    </div>
+    <script>
+        function checkPasswordStrength() {
+            const password = document.getElementById('password').value;
+            const strength = document.getElementById('password-strength');
+            
+            if (password.length === 0) {
+                strength.textContent = 'Strength: ';
+                strength.className = 'password-strength';
+                return;
+            }
+            
+            const lengthCriteria = password.length >= 8;
+            const numberCriteria = /\d/.test(password);
+            const letterCriteria = /[a-zA-Z]/.test(password);
+            const specialCriteria = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+            let strengthClass = 'weak';
+            let strengthText = 'Weak';
+
+            if (lengthCriteria && numberCriteria && letterCriteria && specialCriteria) {
+                strengthClass = 'strong';
+                strengthText = 'Strong';
+            } else if (lengthCriteria && (numberCriteria || letterCriteria)) {
+                strengthClass = 'medium';
+                strengthText = 'Medium';
+            }
+
+            strength.textContent = `Strength: ${strengthText}`;
+            strength.className = `password-strength ${strengthClass}`;
+        }
+
+        function togglePasswordVisibility(id) {
+            const passwordInput = document.getElementById(id);
+            const toggleIcon = id === 'password' ? document.getElementById('toggle-password') : document.getElementById('toggle-confirm_password');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+
+        function validateForm() {
+            const password = document.getElementById('password').value;
+            const passwordConfirm = document.getElementById('confirm_password').value;
+
+            if (password !== passwordConfirm) {
+                alert('Passwords do not match.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
